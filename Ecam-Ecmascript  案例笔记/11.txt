@@ -1,5 +1,71 @@
 
-    if 语句
+    一、if 语句
+
     if 语句是 ECMAScript 中最常用的语句之一，事实上在许多计算机语言中都是如此。
     if 语句的语法：
     if (condition) statement1 else statement2
+
+
+    二、ecmascript  迭代语句
+
+    迭代语句又叫循环语句，声明一组要反复执行的命令，直到满足某些条件为止。
+    循环通常用于迭代数组的值（因此而得名），或者执行重复的算术任务。
+    本节为您介绍 ECMAScript 提供的四种迭代语句。
+
+    *   do-while 语句
+        *   while()
+        *   for()
+        *   for in 语句
+
+    三、ECMAScript break 和 continue 语句
+
+        break 和 continue 语句的不同之处
+        break 语句可以立即退出循环，阻止再次反复执行任何代码。
+        而 continue 语句只是退出当前循环，根据控制表达式还允许继续进行下一次循环。
+
+        与有标签的语句一起使用
+        break 语句和 continue 语句都可以与有标签的语句联合使用，返回代码中的特定位置。
+
+    四、ECMAScript with 语句
+        with 语句用于字符串，所以在调用 toUpperCase() 方法时，解释程序将检查该方法是否是本地函数。如果不是，它将检查伪对象 sMessage，看它是否为该对象的方法。然后，alert 输出 "HELLO"，因为解释程序找到了字符串 "hello" 的 toUpperCase() 方法。
+        提示：with 语句是运行缓慢的代码块，尤其是在已设置了属性值时。大多数情况下，如果可能，最好避免使用它。
+        var num='hello';
+        with(num){
+        alert(toLowerCase())
+        }
+    五、switch  case
+
+        var  data=new Data().getData();
+
+        switch(data){
+        case 0:
+
+                       '星期日';
+                        break;
+        case 1:
+
+                '星期1';
+                 break;
+        case 2:
+
+                '星期2';
+                 break;
+        case 3:
+
+                '星期3';
+                 break;
+        case 4:
+
+                '星期4';
+                 break;
+        case 5:
+
+                '星期5';
+                 break;
+        case 6:
+
+                '星期6';
+                 break;
+        }
+    六、函数概述
+

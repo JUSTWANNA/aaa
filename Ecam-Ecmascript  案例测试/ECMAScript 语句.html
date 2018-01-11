@@ -5,12 +5,39 @@
     <title></title>
 </head>
 <body>
-
+<button type="button">测试变量命名</button>
+<button type="button">测试变量命名</button>
+<button type="button">测试变量命名</button>
+<button type="button">测试变量命名</button>
+<button type="button">测试变量命名</button>
 </body>
 <script>
+
+    window.onload=function(){
+        var aBtn=document.getElementsByTagName('button');
+        //通过let  命名
+        for(let index=0;index<aBtn.length;index++){
+            aBtn[index].addEventListener('click',function(){
+                alert(index)
+            })
+        }
+        //通过var 命名
+//
+//        for(var index=0;index<aBtn.length;index++){
+//            aBtn[index].index=index;
+//            aBtn[index].addEventListener('click',function(){
+//                alert(this.index)
+//            })
+//        }
+
+    };
     /*
     *
     * 1、if  语句
+    *
+    * if else
+    *
+    * if  else if  else
     *
     */
     const num=20;
@@ -19,5 +46,135 @@
     }else{
         alert('正常');
     }
+    /*
+    *
+    * 2、迭代语句（循环语句）
+    *
+    *   do-while 语句
+    *   while()
+    *   for()
+    *   for in 语句
+    *
+    */
+
+    let num1=0;
+    do{
+        num1++;
+    }while(num1<10);
+
+    console.log(num1);
+
+    let num2=0;
+
+    while(num2<5){
+        num2+=2
+    }
+    console.log(num2);
+
+    for(let i=0;i<5;i++){
+        console.log(i);
+    }
+
+    for (let sProp in window) {
+        // window 对象的所有属性。
+        console.log(sProp.length);
+        console.log(sProp);
+    }
+
+    // start:i=5;  标签语句
+
+    //ECMAScript break 和 continue 语句
+
+    var num3=0;
+     for(let i=1;i<100;i++){
+         if(i%5==0){
+             break;
+         }
+         num3++
+     }
+    console.log(num3);
+
+        var num4=0;
+
+    for(let i=1;i<100;i++){  //continue  语句
+        if(i%5==0){
+            continue;
+        }
+        num4++;
+    }
+
+    console.log(num4);
+    //与标签语句一起使用；
+
+    var iNum = 0;
+
+    outermost:
+            for (var i=0; i<10; i++) {  //  1、循环5次 得到结果
+                for (var j=0; j<10; j++) {
+                //  2、  循环 当i=5 循环结束 第二个循环已经进行了
+                // 50次 最后一次循环发生在 j=5 时；
+                    if (i == 5 && j == 5) {
+                        break outermost;  //break  发生时  跳出 循环；循环结束；
+                    }
+                    console.log(1);
+                    iNum++;
+                }
+            }
+
+    alert(iNum);	//输出 "55"
+
+
+    var num5=0;
+
+    outerMost:for(let i=0;i<10;i++){
+
+        for(let j=0;j<10;j++){
+            if(i==5&&j==5){
+                continue outerMost;
+            }
+            num5++
+        }
+    }
+
+    console.log(num5);
+
+    //  with  语句
+
+    var  num6='hello';
+
+    with(num6){
+        alert(toUpperCase());
+        alert(toLocaleUpperCase());
+        alert(toLowerCase());
+        alert(toLocaleLowerCase());
+    }
+   //switch case
+    var day=new Date().getDay();
+    switch (day)
+    {
+        case 0:
+            console.log(x = "Today it's Sunday");
+            break;
+        case 1:
+            console.log(x = "Today it's Monday");
+            break;
+        case 2:
+            console.log(x = "Today it's Tuesday");
+            break;
+        case 3:
+            console.log(x = "Today it's Wednesday");
+            break;
+        case 4:
+            console.log(x = "Today it's Thursday");
+            break;
+        case 5:
+            console.log(x = "Today it's Friday");
+            break;
+        case 6:
+            console.log(x = "Today it's Saturday");
+            break;
+    }
+
+
 </script>
 </html>
