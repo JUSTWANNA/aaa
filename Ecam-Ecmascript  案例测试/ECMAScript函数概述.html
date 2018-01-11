@@ -7,4 +7,73 @@
 <body>
 
 </body>
+<script>
+    /*
+    * 1、函数概述
+    *
+    *  function  fn(fn,name,age,address){}
+    *  调用  fn(say(),'zhangsan','18','某某地')
+    */
+
+    function newFn(name,age,address){
+        console.log((name+':'+age+':'+address));}
+
+    newFn('zhangsan','18','北京:东城区');
+
+    //  返回数值的函数
+
+    function addFn(num1,mum2){
+        return mum2+num1;
+    }
+        var result=addFn(3,5);
+    console.log(result);
+    // arguments  对象；
+
+    function  argNum(){
+//        alert(arguments[0]);  //  12,string,undefined
+          alert(arguments[1]);  //  undefined,string,undefined
+//        alert(arguments.length); //  参数长度
+    }
+
+    argNum(12);
+    argNum('string',45);
+    argNum();
+    //模拟函数重载
+
+    function doAdd(){
+        if(arguments.length==1){
+            return arguments[0]+15;
+        }else if(arguments.length==2){
+            return arguments[0]+arguments[1];
+        }
+    }
+
+    const rel_1=doAdd(10);
+    const rel_2=doAdd(10,30);
+    console.log(rel_1);
+    console.log(rel_2);
+
+
+    //ECMAScript Function 对象（类）
+
+    const sum=new Function('num','alert(num+1)');  //  参数和方法必须加 '';
+
+    sum(4);
+
+    //  参数为  fn()
+
+    function  newCreate(fn,num){
+        fn(num);
+    }
+
+    var createN=new Function('num','alert(num+10)');
+
+    const copyCreate=createN;  //  重新命名赋值方法；
+
+    newCreate(copyCreate,30);  //=>  40
+
+    document.write(createN.toString());  //页面直接打印出  函数方法；
+
+
+</script>
 </html>

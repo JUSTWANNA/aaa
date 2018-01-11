@@ -68,4 +68,46 @@
                  break;
         }
     六、函数概述
+         /*
+            * 1、函数概述
+            *
+            *  function  fn(fn,name,age,address){}
+            *  调用  fn(say(),'zhangsan','18','某某地');
+            *  另一个重要概念是，与在 Java 中一样，
+            *  函数在执行过 return 语句后立即停止代码。
+            *  因此，return 语句后的代码都不会被执行。
+            */
 
+            function newFn(name,age,address){
+                console.log((name+':'+age+':'+address));}
+
+            newFn('zhangsan','18','北京:东城区');
+
+            //  返回数值的函数
+
+            function addFn(num1,mum2){
+                return mum2+num1;
+            }
+                var result=addFn(3,5);
+            console.log(result);
+    七、ECMAScript arguments 对象
+        arguments 对象
+        在函数代码中，使用特殊对象 arguments，开发者无需明确指出参数名，就能访问它们。
+        例如，在函数 sayHi() 中，第一个参数是 message。用 arguments[0] 也可以访问这个值，
+        即第一个参数的值（第一个参数位于位置 0，第二个参数位于位置 1，依此类推）。
+
+
+       function  addSum(){
+
+        arguments=>  代表参数的值  arguments[0],第一个值
+        arguments.length
+
+       }
+
+       模拟函数重载
+       用 arguments 对象判断传递给函数的参数个数，即可模拟函数重载：
+    八、ECMAScript Function 对象（类）
+
+       var newFn=new function('参数','方法=>  alert('测试数据')');
+
+       如果函数名称一样  函数方法会被新写的覆盖;
